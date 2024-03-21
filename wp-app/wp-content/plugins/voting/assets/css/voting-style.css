@@ -1,0 +1,58 @@
+section#voting .container {
+    padding: 20px 10px;
+    border: 2px dashed purple;
+    border-radius: 10px;
+    max-width: 55vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+section#voting .container .buttons {
+    flex-basis: 33%;
+}
+
+section#voting .container .buttons a {
+    color: #333;
+    padding: 10px;
+    border: 1px solid #33333340;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+section#voting .container .buttons {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+section#voting .container span {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+section#voting .container a:before {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    fill: #333;
+}
+
+section#voting .container a:nth-of-type(1):before {
+    content: url("../images/face-smile-solid.svg");
+}
+
+section#voting .container a:nth-of-type(2):before {
+    content: url("../images/face-meh-solid.svg");
+}
