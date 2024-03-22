@@ -43,5 +43,5 @@ No, once a user has voted on an article, they cannot change their vote.
 
 No, plugin checks users IP address saved or not. Preventing voting process if record found.
 
-Support
+<h1>Support</h1>
 For support or inquiries, please feel free to contact me via <a href="mailto:aliguduz1@gmail.com">E-Mail</a>
