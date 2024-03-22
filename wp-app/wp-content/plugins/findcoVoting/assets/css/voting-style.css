@@ -1,8 +1,30 @@
+:root {
+    /* General Setup */
+    --border-color: purple;
+    --main-black-color: #333;
+    --main-darkblue-color: darkblue;
+    --main-title-font-size: 18px;
+    --main-font-weight: 500;
+    --main-buttons-font-weight: 600;
+    --main-container-max-width: 60vh;
+    --main-voting-buttons-font-size:14px;
+    --main-voting-buttons-icon-size:24px;
+
+    /* Responsive Setup */
+
+    --main-container-max-width-lg : 70vh;
+    --main-container-max-width-md : 70vh;
+    --main-title-font-size-lg:17px;
+    --main-title-font-size-md:11px;
+    --main-voting-buttons-font-size-md:10px;
+    --main-voting-buttons-icon-size-md:18px;
+}
+
 section#voting .container {
     padding: 20px 10px;
-    border: 2px dashed purple;
+    border: 2px dashed var(--border-color);
     border-radius: 10px;
-    max-width: 55vh;
+    max-width: var(--main-container-max-width);
     display: flex;
     justify-content: center;
     align-content: center;
@@ -15,18 +37,26 @@ section#voting .container .buttons {
 }
 
 section#voting .container .buttons a {
-    color: #333;
+    color: var(--main-black-color);
     padding: 10px;
     border: 1px solid #33333340;
     border-radius: 7px;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
+    font-weight: var(--main-buttons-font-weight);
+    font-size: var(--main-voting-buttons-font-size);
     display: flex;
     align-content: center;
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+section#voting .container .buttons a:hover {
+    cursor: pointer;
+}
+
+section#voting .container .buttons a.disabled:hover {
+    cursor:unset;
 }
 
 section#voting .container .buttons {
@@ -39,14 +69,15 @@ section#voting .container .buttons {
 
 section#voting .container span {
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: var(--main-font-weight);
+    font-size: var(--main-title-font-size);
 }
 
 section#voting .container a:before {
     display: inline-block;
-    width: 24px;
-    height: 24px;
-    fill: #333;
+    width: var(--main-voting-buttons-icon-size);
+    height: var(--main-voting-buttons-icon-size);
+    fill: var(--main-black-color);
 }
 
 section#voting .container a:nth-of-type(1):before {
@@ -55,4 +86,13 @@ section#voting .container a:nth-of-type(1):before {
 
 section#voting .container a:nth-of-type(2):before {
     content: url("../images/face-meh-solid.svg");
+}
+
+section#voting .container .buttons a.button-selected {
+    color: var(--main-darkblue-color);
+    border-color: var(--main-darkblue-color);
+}
+
+section#voting .container a.button-selected:before {
+    filter: invert(21%) sepia(40%) saturate(5318%) hue-rotate(234deg) brightness(59%) contrast(141%);
 }

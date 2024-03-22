@@ -12,7 +12,10 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+/* Require core files of plugin */
+
 require_once('core/functions.php');
+require_once('core/class-voting.php');
 
 
 ?>

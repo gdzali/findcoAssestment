@@ -1,0 +1,32 @@
+@media screen and (max-width:1440px) { /* Macbooks or Laptops */
+    section#voting .container {
+        max-width: var(--main-container-max-width-lg);
+    }
+
+    section#voting .container span {
+        font-size: var(--main-title-font-size-lg);
+    }
+}
+
+@media screen and (max-width:768px) { /* Mobile Phones */
+    section#voting .container {
+        max-width: var(--main-container-max-width-md);
+    }
+
+    section#voting .container span {
+        font-size: var(--main-title-font-size-md);
+    }
+
+    section#voting .container {
+        gap: 10px;
+    }
+
+    section#voting .container .buttons a {
+        font-size: var(--main-voting-buttons-font-size-md);
+    }
+
+    section#voting .container a:before {
+        width: var(--main-voting-buttons-icon-size-md);
+        height: var(--main-voting-buttons-icon-size-md);
+    }
+}
