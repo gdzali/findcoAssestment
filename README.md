@@ -1,5 +1,3 @@
-Plugin Name
-
 <h1>Description</h1>
 findcoVoting is a WordPress plugin that allows your users to add their vote is post helpful or not. Your users can display results under every post. Users can vote only once for a post. Also you can see your results in posts dashboard editor.
 
@@ -8,7 +6,7 @@ Download the findcoVoting plugin from this repository.
 Upload the plugin files to the /wp-content/plugins/plugin-name directory, or install the plugin through the WordPress plugins screen directly.
 Activate the plugin through the 'Plugins' screen in WordPress.
 
-<h1>Usage</h1>>
+<h1>Usage</h1>
 
 <strong>Adding the Voting Widget to Posts</strong>
 
