@@ -1,161 +1,49 @@
-# WPDC - WordPress Docker Compose
+Plugin Name
 
-Easy WordPress development with Docker and Docker Compose.
+<h1>Description</h1>
+findcoVoting is a WordPress plugin that allows your users to add their vote is post helpful or not. Your users can display results under every post. Users can vote only once for a post. Also you can see your results in posts dashboard editor.
 
-With this project you can quickly run the following:
+<h1>Installation</h1>
+Download the findcoVoting plugin from this repository.
+Upload the plugin files to the /wp-content/plugins/plugin-name directory, or install the plugin through the WordPress plugins screen directly.
+Activate the plugin through the 'Plugins' screen in WordPress.
 
-- [WordPress and WP CLI](https://hub.docker.com/_/wordpress/)
-- [phpMyAdmin](https://hub.docker.com/r/phpmyadmin/phpmyadmin/)
-- [MySQL](https://hub.docker.com/_/mysql/)
+<h1>Usage</h1>>
 
-Contents:
+<strong>Adding the Voting Widget to Posts</strong>
 
-- [Requirements](#requirements)
-- [Configuration](#configuration)
-- [Installation](#installation)
-- [Usage](#usage)
+Voting widget will be enabled automatically under of every post's content.
 
-## Requirements
+<strong>Voting for posts</strong>
 
-Make sure you have the latest versions of **Docker** and **Docker Compose** installed on your machine.
+Find the "Was this Article Helpful?" section.
+User can vote with clicking on the "Yes" or "No" buttons.
 
-Clone this repository or copy the files from this repository into a new folder. In the **docker-compose.yml** file you may change the IP address (in case you run multiple containers) or the database from MySQL to MariaDB.
+<i>The plugin will display the voting results automatically in the WordPress dashboard.</i>
 
-Make sure to [add your user to the `docker` group](https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user) when using Linux.
+<strong>Viewing Voting Results in the Dashboard</strong>
 
-## Configuration
+To see voting results in the WordPress dashboard, follow these steps:
 
-Copy the example environment into `.env`
+Log in to your WordPress dashboard with your account credentials.
+Navigate to the post you want to see.
+Navigate down to the "Voting Results" box.
+The information box displays the total number of votes, as well as the percentage of "Yes" and "No" votes.
 
-```
-cp env.example .env
-```
+<h1>Frequently Asked Questions (FAQ)</h1>
 
-Edit the `.env` file to change the default IP address, MySQL root password and WordPress database name.
+<strong>How can I customize the appearance of the voting widget?</strong>
 
-## Installation
+You can customize the appearance of the voting widget by modifying the plugin's CSS styles. The plugin provides responsive options and variables to manage your own customization.
+Variables and other options can be found in /findcovoting/assets/css/
 
-Open a terminal and `cd` to the folder in which `docker-compose.yml` is saved and run:
+<strong>Can users change their votes?</strong>
 
-```
-docker-compose up
-```
+No, once a user has voted on an article, they cannot change their vote.
 
-This creates two new folders next to your `docker-compose.yml` file.
+<strong>Can users vote multiple times ?</strong>
 
-* `wp-data` – used to store and restore database dumps
-* `wp-app` – the location of your WordPress application
+No, plugin checks users IP address saved or not. Preventing voting process if record found.
 
-The containers are now built and running. You should be able to access the WordPress installation with the configured IP in the browser address. By default it is `http://127.0.0.1`.
-
-For convenience you may add a new entry into your hosts file.
-
-Changes the ports, if needed, by editing the `docker-compose.yml` file.
-
-## Usage
-
-### Starting containers
-
-You can start the containers with the `up` command in daemon mode (by adding `-d` as an argument) or by using the `start` command:
-
-```
-docker-compose start
-```
-
-### Stopping containers
-
-```
-docker-compose stop
-```
-
-### Removing containers
-
-To stop and remove all the containers use the`down` command:
-
-```
-docker-compose down
-```
-
-Use `-v` if you need to remove the database volume which is used to persist the database:
-
-```
-docker-compose down -v
-```
-
-### Project from existing source
-
-Copy the `docker-compose.yml` file into a new directory. In the directory you create two folders:
-
-* `wp-data` – here you add the database dump
-* `wp-app` – here you copy your existing WordPress code
-
-You can now use the `up` command:
-
-```
-docker-compose up
-```
-
-This will create the containers and populate the database with the given dump. You may set your host entry and change it in the database, or you simply overwrite it in `wp-config.php` by adding:
-
-```
-define('WP_HOME','http://wp-app.local');
-define('WP_SITEURL','http://wp-app.local');
-```
-
-### Creating database dumps
-
-```
-./export.sh
-```
-
-### Developing a Theme
-
-Configure the volume to load the theme in the container in the `docker-compose.yml`:
-
-```
-volumes:
-  - ./theme-name/trunk/:/var/www/html/wp-content/themes/theme-name
-```
-
-### Developing a Plugin
-
-Configure the volume to load the plugin in the container in the `docker-compose.yml`:
-
-```
-volumes:
-  - ./plugin-name/trunk/:/var/www/html/wp-content/plugins/plugin-name
-```
-
-### WP CLI
-
-The docker compose configuration also provides a service for using the [WordPress CLI](https://developer.wordpress.org/cli/commands/).
-
-Sample command to install WordPress:
-
-```
-docker-compose run --rm wpcli core install --url=http://localhost --title=test --admin_user=admin --admin_email=test@example.com
-```
-
-Or to list installed plugins:
-
-```
-docker-compose run --rm wpcli plugin list
-```
-
-For an easier usage you may consider adding an alias for the CLI:
-
-```
-alias wp="docker-compose run --rm wpcli"
-```
-
-This way you can use the CLI command above as follows:
-
-```
-wp plugin lists
-```
-
-### phpMyAdmin
-
-You can also visit `http://127.0.0.1:8080` to access phpMyAdmin after starting the containers.
-
-The default username is `root`, and the password is the same as supplied in the `.env` file.
+Support
+For support or inquiries, please feel free to contact me via <a href="mailto:aliguduz1@gmail.com">E-Mail</a>
